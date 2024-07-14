@@ -48,15 +48,18 @@ provide('cart', {
 </script>
 
 <template>
-  <Drawer v-if="drawerOpen" :total-price="totalPrice" :vat-price="vatPrice"/>
-
-  <div>
-    <Header :total-price="totalPrice" @open-drawer="openDrawer"/>
+  <div id="app">
+    <Drawer v-if="drawerOpen" :total-price="totalPrice" :vat-price="vatPrice"/>
 
     <div>
-      <router-view></router-view>
+      <Header :total-price="totalPrice" @open-drawer="openDrawer"/>
+
+      <div>
+        <router-view></router-view>
+      </div>
     </div>
   </div>
+
 </template>
 
 <style scoped>
